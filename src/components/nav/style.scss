@@ -3,7 +3,6 @@
 #nav {
   nav {
     @include mixins.with-container;
-    border-bottom: 4px solid variables.$gray-3;
     margin: 0 auto;
     z-index: 10;
   }
@@ -23,11 +22,7 @@
 
     img {
       height: 100%;
-    }
-
-    &:hover img {
-      filter: brightness(0) saturate(100%) invert(88%) sepia(74%)
-        saturate(5057%) hue-rotate(359deg) brightness(104%) contrast(106%);
+      cursor: pointer;
     }
   }
 

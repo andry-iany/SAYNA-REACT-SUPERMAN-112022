@@ -4,7 +4,5 @@
   position: relative;
   margin: 0 auto;
   padding: 0;
-  @include mixins.border(left);
-  @include mixins.border(right);
   @include mixins.with-container;
 }

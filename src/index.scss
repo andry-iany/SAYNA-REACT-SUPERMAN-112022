@@ -148,11 +148,6 @@ ul {
 
 .icon-link {
   position: relative;
-
-  &:hover img {
-    filter: brightness(0) saturate(100%) invert(88%) sepia(74%) saturate(5057%)
-      hue-rotate(359deg) brightness(104%) contrast(106%);
-  }
 }
 
 .breadcrumb-item.active,

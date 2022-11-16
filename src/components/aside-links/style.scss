@@ -1,0 +1,40 @@
+@use "../../assets/styles/_partials/mixins";
+@use "../../assets/styles/_partials/variables";
+
+#aside-link {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+
+  .container-wrapper {
+    position: relative;
+    margin: 0 auto;
+    @include mixins.with-container;
+  }
+
+  .networks {
+    @include mixins.flex($direction: column);
+    gap: 1.5rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+  }
+
+  .icon-aside {
+    max-width: 2.8rem;
+
+    @include mixins.mq_md {
+      max-width: 3.5rem;
+    }
+    @include mixins.mq_lg {
+      max-width: 5rem;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}

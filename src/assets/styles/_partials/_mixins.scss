@@ -1,0 +1,152 @@
+@use "variables";
+
+@mixin mq($min, $max) {
+  @media screen and (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}
+
+@mixin mq_sm {
+  @media screen and (min-width: variables.$sm) {
+    @content;
+  }
+}
+
+@mixin mq_md {
+  @media screen and (min-width: variables.$md) {
+    @content;
+  }
+}
+
+@mixin mq_lg {
+  @media screen and (min-width: variables.$lg) {
+    @content;
+  }
+}
+
+@mixin mq_xl {
+  @media screen and (min-width: variables.$xl) {
+    @content;
+  }
+}
+
+@mixin border($position: bottom, $color: variables.$gray-3, $width: 2px) {
+  border-#{$position}: $width solid $color;
+}
+
+@mixin flex($direction: row, $justify-content: center, $align-items: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+@mixin text-light {
+  color: variables.$gray-1;
+}
+
+@mixin text-white {
+  color: variables.$white;
+}
+
+@mixin font_rajdhani($font-weight: 500) {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: $font-weight;
+}
+
+@mixin font_rajdhani_medium() {
+  @include font_rajdhani(500);
+}
+
+@mixin font_spaceGrotesk($font-weight: 400) {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: $font-weight;
+}
+
+@mixin font_spaceGrotesk_normal() {
+  @include font_spaceGrotesk(400);
+}
+
+@mixin font_spaceGrotesk_bold() {
+  @include font_spaceGrotesk(700);
+}
+
+@mixin padding_x($left: 0, $right: 0) {
+  padding-left: $left;
+  padding-right: $right;
+}
+
+@mixin padding_y($top: 0, $bottom: 0) {
+  padding-top: $top;
+  padding-bottom: $bottom;
+}
+
+@keyframes scale-in {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@mixin animation-scale-in {
+  animation: scale-in 0.8s ease-in-out forwards;
+}
+
+@mixin animation-fade-in {
+  animation: fade-in 0.4s ease-in-out forwards;
+}
+
+@keyframes slide-in-to-left {
+  0% {
+    transform: translateX(30vw);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slide-in-to-right {
+  0% {
+    transform: translateX(-30vw);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@mixin animation-slide-in($direction: left) {
+  animation: "slide-in-to-#{$direction}" 0.8s ease-in-out forwards;
+}
+@mixin animation-slide-in-to-right() {
+  @include animation-slide-in(right);
+}
+@mixin animation-slide-in-to-left() {
+  @include animation-slide-in(left);
+}
+
+@mixin with-container {
+  max-width: calc(100vw - 4rem);
+  @include mq_md {
+    max-width: calc(100vw - 6rem);
+  }
+  @include mq_lg {
+    max-width: calc(100vw - 8rem);
+  }
+  @include mq_xl {
+    max-width: calc(100vw - 10rem);
+  }
+}

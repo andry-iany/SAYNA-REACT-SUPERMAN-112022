@@ -1,5 +1,5 @@
-@use "./assets/styles/_partials/variables";
-@use "./assets/styles/_partials/mixins";
+@use "./_partials/variables";
+@use "./_partials/mixins";
 
 * {
   box-sizing: border-box;
@@ -70,6 +70,7 @@ ul {
   &-translucent-blue,
   &-translucent-yellow {
     width: 13rem;
+    min-width: max-content;
     padding: 1rem 2rem;
     text-transform: uppercase;
   }

@@ -172,7 +172,7 @@ const Filter = () => {
           <input type="range" className="form-range" id="prix" />
           <div className="d-flex justify-content-between">
             <small>0€</small>
-            <small>100</small>
+            <small>100€</small>
             <small>200€</small>
           </div>
         </div>

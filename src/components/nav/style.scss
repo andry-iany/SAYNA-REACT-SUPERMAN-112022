@@ -8,16 +8,16 @@
   }
 
   .logo {
-    height: 2rem;
+    height: 3rem;
     display: inline-block;
     position: relative;
 
     @include mixins.mq_md {
-      height: 3rem;
+      height: 3.5rem;
     }
 
     @include mixins.mq_lg {
-      height: 3.5rem;
+      height: 4.5rem;
     }
 
     img {

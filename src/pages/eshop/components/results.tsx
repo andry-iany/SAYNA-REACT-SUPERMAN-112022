@@ -1,4 +1,4 @@
-import basket from "../../assets/icones/icone_1.png";
+import basket from "../../../assets/icones/icone_1.png";
 import Article from "./article";
 import { articles } from "./data";
 

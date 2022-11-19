@@ -1,0 +1,25 @@
+$img-gap: 0.5rem;
+$img-other-width: 4rem;
+
+.imgWrapper {
+  gap: $img-gap;
+}
+
+.imgWrapper img {
+  object-fit: cover;
+  object-position: center;
+  border: 1px solid #fff;
+  display: block;
+}
+
+.imgHighlight {
+  width: calc(100% - ($img-gap + $img-other-width));
+  height: 100%;
+  min-height: 350px;
+}
+
+.imgsOther img {
+  width: $img-other-width;
+  height: 4rem;
+  margin-bottom: 0.5rem;
+}

@@ -1,7 +1,7 @@
 import ArrowDown from "../../components/arrow-down";
-import Filter from "./filter";
-import Header from "./header";
-import Results from "./results";
+import Filter from "./components/filter";
+import Header from "./components/header";
+import Results from "./components/results";
 import "./style.scss";
 
 const EShop = () => {

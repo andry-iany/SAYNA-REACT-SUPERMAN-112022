@@ -8,6 +8,7 @@ import "bootstrap/dist/js/bootstrap.min.js";
 import Nav from "./components/nav";
 import ContainerWrapper from "./components/container";
 import Footer from "./components/footer";
+import ProductDetail from "./pages/productDetail";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Nav />
         <Routes>
           <Route element={<EShop />} path="/e-shop" />
+          <Route element={<ProductDetail />} path="/e-shop/product/:id" />
           <Route element={<Game />} path="/game" />
           <Route element={<Navigate to="/e-shop" />} path="*" />
         </Routes>

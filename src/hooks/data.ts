@@ -1,4 +1,4 @@
-import { Article, Review } from "../types";
+import { Article, CartItem, Review } from "../types";
 
 export const articles: Article[] = [
   {
@@ -80,5 +80,16 @@ export const reviews: Review[] = [
     rating: 4,
     content:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dignissim elit id turpis scelerisque mollis. Nulla vehicula velit augue, ut maximus est porttitor quis. Morbi finibus, nulla non consectetur convallis, eros mi sollicitudin metus, id sollicitudin nunc ligula eu dui.",
+  },
+];
+
+export const cartItems: CartItem[] = [
+  {
+    count: 23,
+    article: articles[0],
+  },
+  {
+    count: 23,
+    article: articles[2],
   },
 ];

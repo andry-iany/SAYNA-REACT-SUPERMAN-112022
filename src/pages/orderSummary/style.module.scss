@@ -1,0 +1,23 @@
+.order {
+  max-width: 80%;
+  padding: 2rem;
+  margin: 2rem auto 4rem auto;
+}
+
+.itemImg {
+  width: 6rem;
+  height: 6rem;
+  text-align: center;
+  flex-shrink: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.inputAdd {
+  width: 300px;
+}

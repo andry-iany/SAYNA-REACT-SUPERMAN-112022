@@ -1,27 +1,12 @@
 import { Link } from "react-router-dom";
-import { articles } from "../../hooks/data";
-import { CartItem as CartItemType } from "../../types";
+import { useGetCartItems, useGetCartPriceSubtotal } from "../../hooks";
 import CartItem from "./components/cartItem";
 import classes from "./style.module.scss";
 
-// TEMP
-const cartItems: CartItemType[] = [
-  {
-    count: 23,
-    article: articles[0],
-  },
-  {
-    count: 23,
-    article: articles[2],
-  },
-];
-
-const getPriceSubtotal = () =>
-  cartItems
-    .map((item) => item.article.price * item.count)
-    .reduce((acc, curr) => acc + curr, 0);
-
 const Cart = () => {
+  const cartItems = useGetCartItems();
+  const subtotal = useGetCartPriceSubtotal();
+
   return (
     <section className={classes.cart}>
       <h5 className={classes.cartTitle + " mb-5 text-uppercase fw-bold"}>
@@ -38,7 +23,7 @@ const Cart = () => {
 
           <p className="text-end py-4 px-3">
             <span className="fw-light text-uppercase me-4">Sous total</span>
-            <span className="h4">{getPriceSubtotal()}€</span>
+            <span className="h4">{subtotal}€</span>
           </p>
         </>
       )}
@@ -60,7 +45,7 @@ const Cart = () => {
           CONTINUER MES ACHATS
         </Link>
         <Link
-          to="/e-shop"
+          to="/e-shop/order-summary"
           className={
             classes.btnContinue + " btn-translucent-red-blue rounded d-block"
           }

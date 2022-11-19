@@ -1,116 +1,12 @@
-type FilterOption = {
-  description: string;
-  count: number;
+import { FormEvent, useState } from "react";
+import { Filtertype } from "..";
+
+type Props = {
+  filters: Filtertype[];
+  onFilterChange: (filters: string[]) => void;
 };
 
-type Filter = {
-  title: string;
-  options: FilterOption[];
-};
-
-const filters: Filter[] = [
-  {
-    title: "catégorie",
-    options: [
-      {
-        description: "Bestsellers",
-        count: 123,
-      },
-      {
-        description: "Goodies",
-        count: 123,
-      },
-      {
-        description: "Vêtements",
-        count: 123,
-      },
-      {
-        description: "Affiches/posters",
-        count: 123,
-      },
-      {
-        description: "Comics",
-        count: 123,
-      },
-      {
-        description: "Multimedia",
-        count: 123,
-      },
-      {
-        description: "Equipement",
-        count: 123,
-      },
-      {
-        description: "Bijoux",
-        count: 123,
-      },
-      {
-        description: "Vehicule",
-        count: 123,
-      },
-    ],
-  },
-  {
-    title: "Couleur",
-    options: [
-      {
-        description: "Bestsellers",
-        count: 123,
-      },
-      {
-        description: "Goodies",
-        count: 123,
-      },
-      {
-        description: "Vêtements",
-        count: 123,
-      },
-    ],
-  },
-  {
-    title: "Univers",
-    options: [
-      {
-        description: "Bestsellers",
-        count: 123,
-      },
-      {
-        description: "Goodies",
-        count: 123,
-      },
-      {
-        description: "Vêtements",
-        count: 123,
-      },
-      {
-        description: "Affiches/posters",
-        count: 123,
-      },
-      {
-        description: "Comics",
-        count: 123,
-      },
-      {
-        description: "Multimedia",
-        count: 123,
-      },
-      {
-        description: "Equipement",
-        count: 123,
-      },
-      {
-        description: "Bijoux",
-        count: 123,
-      },
-      {
-        description: "Vehicule",
-        count: 123,
-      },
-    ],
-  },
-];
-
-const Filter = () => {
+const Filter = ({ filters, onFilterChange }: Props) => {
   const renderFilters = filters.map((filter) => {
     return (
       <div className="accordion-item mb-4" key={filter.title}>
@@ -135,21 +31,20 @@ const Filter = () => {
                 return (
                   <div
                     className="form-check d-flex gap-3 align-items-baseline mb-3"
-                    key={option.description}
+                    key={option}
                   >
                     <input
                       className="form-check-input"
                       type="checkbox"
-                      value=""
+                      value={option}
                       id="flexCheckDefault"
                     />
                     <label
                       className="form-check-label w-100 text-capitalize"
                       htmlFor="flexCheckDefault"
                     >
-                      {option.description}
+                      {option}
                     </label>
-                    <small>{option.count}</small>
                   </div>
                 );
               })}
@@ -160,11 +55,24 @@ const Filter = () => {
     );
   });
 
+  const handleChangeFilter = (e: FormEvent<HTMLFormElement>) => {
+    const target = e.currentTarget;
+    const inputs = target.querySelectorAll<HTMLInputElement>(
+      "input[type=checkbox]"
+    );
+
+    const values = [...inputs]
+      .filter((input) => input.checked)
+      .map((input) => input.value);
+
+    onFilterChange(values);
+  };
+
   return (
     <section id="filter" className="text-white">
       <h2 className="mb-5">Filtres</h2>
 
-      <form action="" className="mb-5">
+      <form action="" className="mb-5" onChange={handleChangeFilter}>
         <div className="mb-4">
           <label htmlFor="prix" className="form-label mb-4">
             Prix

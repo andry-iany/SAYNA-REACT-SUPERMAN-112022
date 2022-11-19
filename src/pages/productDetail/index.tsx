@@ -11,8 +11,6 @@ const ProductDetail = () => {
   const id = Number(params?.["id"]);
   const { article } = useGetArticleById(id);
 
-  console.log({ article });
-
   const srcSet = [
     `/super-articles/${article?.src}`,
     "/super-articles/article-1.jpg",

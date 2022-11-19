@@ -23,3 +23,13 @@ export const useGetSimilarArticles = (id: Article["id"]) => {
 
   return { articles: similarArticles, isLoading: false, isError: false };
 };
+
+export const useGetAllArticleCategories = () => {
+  const { articles } = useGetAllArticles();
+  const categories = articles.map((article) => article.category);
+  return {
+    categories: [...new Set(categories)],
+    isLoading: false,
+    isError: false,
+  };
+};

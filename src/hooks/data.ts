@@ -3,7 +3,7 @@ import { Article, Review } from "../types";
 export const articles: Article[] = [
   {
     id: 1,
-    name: "Goodies",
+    name: "Lorem Ipsum",
     category: "equipements",
     price: 109,
     src: "article-1.jpg",
@@ -17,8 +17,8 @@ export const articles: Article[] = [
   },
   {
     id: 3,
-    name: "Other Goodies",
-    category: "goodies",
+    name: "Other Equipments",
+    category: "equipements",
     price: 8,
     src: "article-3.jpeg",
   },

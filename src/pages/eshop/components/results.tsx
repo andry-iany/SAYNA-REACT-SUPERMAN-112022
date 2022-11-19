@@ -1,10 +1,13 @@
 import basket from "../../../assets/icones/icone_1.png";
 import { useGetAllArticles } from "../../../hooks";
+import { Article as ArticleType } from "../../../types";
 import Article from "./article";
 
-const Results = () => {
-  const { articles } = useGetAllArticles();
+type Props = {
+  articles: ArticleType[];
+};
 
+const Results = ({ articles }: Props) => {
   const renderArticles = articles.map((article) => {
     return (
       <div className="col-12 col-lg-6 col-xl-4" key={article.id}>

@@ -1,38 +1,38 @@
 @use "../../assets/styles/_partials/mixins";
 @use "../../assets/styles/_partials/variables";
 
-#header {
-  padding: 0 2.5rem;
-  min-height: max-content;
-  height: calc(100vh - 3.5rem);
+// #header {
+//   padding: 0 2.5rem;
+//   min-height: max-content;
+//   height: calc(100vh - 3.5rem);
 
-  span {
-    display: block;
-    text-align: center;
-    font-size: 1.2em;
-    @include mixins.mq_lg {
-      text-align: left;
-      padding-left: 8rem;
-    }
-  }
+//   span {
+//     display: block;
+//     text-align: center;
+//     font-size: 1.2em;
+//     @include mixins.mq_lg {
+//       text-align: left;
+//       padding-left: 8rem;
+//     }
+//   }
 
-  .hero-bg {
-    z-index: -1;
-    position: absolute;
-    width: 100vw;
-    height: calc(100vh + 76px);
-    min-height: max-content;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%);
-    background-blend-mode: overlay;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-image: url("../../assets/superman/img20.png"),
-      linear-gradient(to bottom, #000 0%, #00000052 13%);
-  }
-}
+//   .hero-bg {
+//     z-index: -1;
+//     position: absolute;
+//     width: 100vw;
+//     height: calc(100vh + 76px);
+//     min-height: max-content;
+//     top: 0;
+//     left: 50%;
+//     transform: translate(-50%);
+//     background-blend-mode: overlay;
+//     background-size: cover;
+//     background-repeat: no-repeat;
+//     background-position: center;
+//     background-image: url("../../assets/superman/img20.png"),
+//       linear-gradient(to bottom, #000 0%, #00000052 13%);
+//   }
+// }
 
 #filter {
   .accordion-button,

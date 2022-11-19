@@ -11,6 +11,7 @@ import Footer from "./components/footer";
 import ProductDetail from "./pages/productDetail";
 import Cart from "./pages/cart";
 import OrderSummary from "./pages/orderSummary";
+import Home from "./pages/home";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <ContainerWrapper>
         <Nav />
         <Routes>
+          <Route element={<Home />} path="/" />
           <Route element={<EShop />} path="/e-shop" />
           <Route element={<ProductDetail />} path="/e-shop/product/:id" />
           <Route element={<Cart />} path="/e-shop/cart" />

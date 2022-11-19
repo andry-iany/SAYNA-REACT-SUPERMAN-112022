@@ -1,6 +1,9 @@
 import { Article } from "../types";
 import { articles, reviews } from "./data";
 
+// TODO:
+// - change implementation here to make API calls to fetch the data
+
 export const useGetAllArticles = () => {
   return { articles, isLoading: false, isError: false };
 };

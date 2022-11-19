@@ -1,0 +1,16 @@
+.cart {
+  width: 80%;
+  margin-inline: auto;
+}
+
+.btnContinue:hover {
+  color: white;
+}
+.btnContinue:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.textNoItems {
+  color: rgb(203, 203, 203);
+}

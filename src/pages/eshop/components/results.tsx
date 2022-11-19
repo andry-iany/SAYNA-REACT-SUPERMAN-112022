@@ -1,4 +1,5 @@
-import basket from "../../../assets/icones/icone_1.png";
+import { Link } from "react-router-dom";
+import CartIcon from "../../../components/cartIcon";
 import { useGetAllArticles } from "../../../hooks";
 import { Article as ArticleType } from "../../../types";
 import Article from "./article";
@@ -18,9 +19,7 @@ const Results = ({ articles }: Props) => {
 
   return (
     <section id="results" className="px-3 text-white">
-      <div className="text-end px-4 mb-4">
-        <img className="basket" src={basket} alt="" />
-      </div>
+      <CartIcon />
 
       <div className="d-flex justify-content-between mb-5">
         <h5>Résultats: 122</h5>

@@ -5,6 +5,7 @@ import ProductImage from "./components/productImage";
 import ProductRating from "./components/productRating";
 
 import ProductSimilar from "./components/productSimilar";
+import CartIcon from "../../components/cartIcon";
 
 const ProductDetail = () => {
   const params = useParams();
@@ -12,7 +13,7 @@ const ProductDetail = () => {
   const { article } = useGetArticleById(id);
 
   const srcSet = [
-    `/super-articles/${article?.src}`,
+    article?.src || "",
     "/super-articles/article-1.jpg",
     "/super-articles/article-2.jpeg",
   ];
@@ -21,6 +22,8 @@ const ProductDetail = () => {
 
   return (
     <div>
+      <CartIcon />
+
       <div className="row border-secondary border-bottom pb-4 mb-4">
         <div className="col-md-6 col-lg-5 pb-5">
           <ProductImage srcSet={srcSet} />

@@ -1,0 +1,41 @@
+.itemCountWrapper {
+  display: flex;
+  align-items: stretch;
+  height: max-content;
+}
+.itemCountWrapper * {
+  display: block;
+  height: 100%;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #fff;
+  color: #000;
+  font-size: 1.2rem;
+}
+.itemCountWrapper button {
+  font-weight: bold;
+}
+.itemImg {
+  width: 6rem;
+  height: 6rem;
+  text-align: center;
+  flex-shrink: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+.itemCountWrapper button {
+  font-weight: bold;
+}
+.btnCancel {
+  width: 2.4rem;
+  height: 2.4rem;
+  flex-shrink: 0;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: 500;
+}

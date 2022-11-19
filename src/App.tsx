@@ -9,6 +9,7 @@ import Nav from "./components/nav";
 import ContainerWrapper from "./components/container";
 import Footer from "./components/footer";
 import ProductDetail from "./pages/productDetail";
+import Cart from "./pages/cart";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Routes>
           <Route element={<EShop />} path="/e-shop" />
           <Route element={<ProductDetail />} path="/e-shop/product/:id" />
+          <Route element={<Cart />} path="/e-shop/cart" />
           <Route element={<Game />} path="/game" />
           <Route element={<Navigate to="/e-shop" />} path="*" />
         </Routes>

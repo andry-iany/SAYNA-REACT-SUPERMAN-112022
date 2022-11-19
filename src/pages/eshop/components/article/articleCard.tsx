@@ -11,7 +11,7 @@ const ArticleCard = ({ article }: Props) => {
     <Link className={classes.article} to={"/e-shop/product/" + article.id}>
       <div className="card rounded-0 mb-4">
         <img
-          src={"/super-articles/" + article.src}
+          src={article.src}
           className="card-img-top"
           alt=""
           style={{

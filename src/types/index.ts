@@ -12,3 +12,10 @@ export type Review = {
   rating: number;
   content: string;
 };
+
+export type CartItem = {
+  article: Article;
+  count: number;
+};
+
+export type Cart = CartItem[];

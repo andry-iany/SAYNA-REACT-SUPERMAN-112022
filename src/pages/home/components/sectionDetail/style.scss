@@ -1,0 +1,88 @@
+@use "../../../../assets/styles/_partials/mixins";
+@use "../../../../assets/styles/_partials/variables";
+
+.section {
+  .container {
+    padding-bottom: 4rem;
+  }
+
+  @include mixins.mq_md {
+    &-left {
+      .section-title,
+      .section-text {
+        padding-right: 6rem;
+      }
+    }
+
+    &-right {
+      .section-title,
+      .section-text {
+        padding-left: 6rem;
+      }
+    }
+  }
+
+  &.-down {
+    img {
+      cursor: pointer;
+      height: 2.2rem;
+      margin: 0 auto;
+      display: block;
+    }
+  }
+
+  &-title {
+    font-size: 1.75rem;
+    text-align: center;
+    text-transform: uppercase;
+    @include mixins.padding_y(2rem, 2rem);
+    @include mixins.font_spaceGrotesk_bold;
+
+    @include mixins.mq_md {
+      text-align: start;
+    }
+  }
+
+  &-text {
+    padding-bottom: 4.5rem;
+    text-align: justify;
+  }
+
+  &-images {
+    @include mixins.flex($justify-content: flex-start);
+    flex-wrap: nowrap;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  &-image-wrapper {
+    position: relative;
+    min-width: 100%;
+    width: 33%;
+    max-width: 100%;
+    transition: all ease 0.3s;
+    padding: 4rem 2rem;
+    min-height: 500px;
+    max-height: 500px;
+    display: flex;
+    justify-content: center;
+
+    @include mixins.mq_md {
+      min-width: 50%;
+      max-width: 50%;
+    }
+    @include mixins.mq_lg {
+      min-width: auto;
+      max-width: auto;
+    }
+  }
+
+  &-image {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    object-position: top center;
+  }
+}

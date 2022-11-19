@@ -30,11 +30,6 @@ const Nav = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to={"/game"} className="nav-link">
-                Game
-              </Link>
-            </li>
-            <li className="nav-item">
               <Link to={"/e-shop"} className="nav-link">
                 E-shop
               </Link>

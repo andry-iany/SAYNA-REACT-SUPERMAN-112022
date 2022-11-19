@@ -1,11 +1,10 @@
 import "./App.scss";
 import { Routes, Route, Navigate } from "react-router-dom";
-import EShop from "./pages/eshop";
-import Game from "./pages/game";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import Nav from "./components/nav";
+import EShop from "./pages/eshop";
 import ContainerWrapper from "./components/container";
 import Footer from "./components/footer";
 import ProductDetail from "./pages/productDetail";
@@ -24,8 +23,7 @@ function App() {
           <Route element={<ProductDetail />} path="/e-shop/product/:id" />
           <Route element={<Cart />} path="/e-shop/cart" />
           <Route element={<OrderSummary />} path="/e-shop/order-summary" />
-          <Route element={<Game />} path="/game" />
-          <Route element={<Navigate to="/e-shop" />} path="*" />
+          <Route element={<Navigate to="/" />} path="*" />
         </Routes>
         <Footer />
       </ContainerWrapper>

@@ -1,4 +1,4 @@
-import { Article } from "../../../types";
+import { Article, Review } from "../types";
 
 export const articles: Article[] = [
   {
@@ -63,5 +63,22 @@ export const articles: Article[] = [
     category: "goodies",
     price: 15,
     src: "article-9.png",
+  },
+];
+
+export const reviews: Review[] = [
+  {
+    id: 1,
+    reviewer: "Robert",
+    rating: 4,
+    content:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dignissim elit id turpis scelerisque mollis. Nulla vehicula velit augue, ut maximus est porttitor quis. Morbi finibus, nulla non consectetur convallis, eros mi sollicitudin metus, id sollicitudin nunc ligula eu dui.",
+  },
+  {
+    id: 2,
+    reviewer: "John",
+    rating: 4,
+    content:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dignissim elit id turpis scelerisque mollis. Nulla vehicula velit augue, ut maximus est porttitor quis. Morbi finibus, nulla non consectetur convallis, eros mi sollicitudin metus, id sollicitudin nunc ligula eu dui.",
   },
 ];

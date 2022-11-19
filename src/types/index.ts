@@ -5,3 +5,10 @@ export type Article = {
   category: string;
   price: number;
 };
+
+export type Review = {
+  id: number;
+  reviewer: string;
+  rating: number;
+  content: string;
+};

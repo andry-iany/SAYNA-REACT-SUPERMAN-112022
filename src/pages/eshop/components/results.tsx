@@ -1,8 +1,10 @@
 import basket from "../../../assets/icones/icone_1.png";
+import { useGetAllArticles } from "../../../hooks";
 import Article from "./article";
-import { articles } from "./data";
 
 const Results = () => {
+  const { articles } = useGetAllArticles();
+
   const renderArticles = articles.map((article) => {
     return (
       <div className="col-12 col-lg-6 col-xl-4" key={article.id}>

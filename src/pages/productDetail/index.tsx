@@ -5,6 +5,7 @@ import ProductImage from "./components/productImage";
 import ProductRating from "./components/productRating";
 
 import classes from "./style.module.scss";
+import ProductSimilar from "./components/productSimilar";
 
 const srcSet = [
   "/super-articles/article-1.jpg",
@@ -14,7 +15,8 @@ const srcSet = [
 
 const ProductDetail = () => {
   const params = useParams();
-  const { article } = useGetArticleById(Number(params?.["id"]));
+  const id = Number(params?.["id"]);
+  const { article } = useGetArticleById(id);
 
   const onAddToCart = (e: any) => {};
 
@@ -72,6 +74,8 @@ const ProductDetail = () => {
       </div>
 
       <ProductReview />
+
+      <ProductSimilar id={id} />
     </div>
   );
 };

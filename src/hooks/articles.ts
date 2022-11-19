@@ -13,3 +13,13 @@ export const useGetArticleById = (id: Article["id"]) => {
 export const useGetReviewByArticleId = (id: Article["id"]) => {
   return { reviews, isLoading: false, isError: false };
 };
+
+export const useGetSimilarArticles = (id: Article["id"]) => {
+  const { article } = useGetArticleById(id);
+
+  const similarArticles = articles.filter(
+    (art) => art.id !== id && art.category === article.category
+  );
+
+  return { articles: similarArticles, isLoading: false, isError: false };
+};

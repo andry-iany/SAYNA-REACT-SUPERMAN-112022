@@ -44,7 +44,7 @@ const ProductDetail = () => {
           </div>
 
           <div className="d-flex gap-4 border-secondary border-bottom pt-3 pb-5 mb-4">
-            <button className={classes.addToCart} onClick={onAddToCart}>
+            <button className="btn-translucent-red-blue rounded d-block">
               ajouter au panier
             </button>
           </div>

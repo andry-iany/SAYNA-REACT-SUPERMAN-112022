@@ -4,19 +4,20 @@ import ProductReview from "./components/productReview";
 import ProductImage from "./components/productImage";
 import ProductRating from "./components/productRating";
 
-import classes from "./style.module.scss";
 import ProductSimilar from "./components/productSimilar";
-
-const srcSet = [
-  "/super-articles/article-1.jpg",
-  "/super-articles/article-2.jpeg",
-  "/super-articles/article-3.jpeg",
-];
 
 const ProductDetail = () => {
   const params = useParams();
   const id = Number(params?.["id"]);
   const { article } = useGetArticleById(id);
+
+  console.log({ article });
+
+  const srcSet = [
+    `/super-articles/${article?.src}`,
+    "/super-articles/article-1.jpg",
+    "/super-articles/article-2.jpeg",
+  ];
 
   const onAddToCart = (e: any) => {};
 
@@ -33,18 +34,21 @@ const ProductDetail = () => {
           </div>
 
           <h1 className="text-uppercase border-secondary border-bottom pt-3 pb-5 mb-4">
-            {article.name}
+            {article?.name}
           </h1>
 
           <div className="d-flex justify-content-between mb-4">
-            <h2 className="mb-4">{article.price}€</h2>
+            <h2 className="mb-4">{article?.price}€</h2>
             <div className="d-flex align-items-center gap-3">
               <span className="text-decoration-underline">En stock</span>
             </div>
           </div>
 
           <div className="d-flex gap-4 border-secondary border-bottom pt-3 pb-5 mb-4">
-            <button className="btn-translucent-red-blue rounded d-block">
+            <button
+              className="btn-translucent-red-blue rounded d-block"
+              onClick={onAddToCart}
+            >
               ajouter au panier
             </button>
           </div>

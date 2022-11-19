@@ -6,7 +6,7 @@ export const useGetAllArticles = () => {
 };
 
 export const useGetArticleById = (id: Article["id"]) => {
-  const article = articles[id];
+  const article = articles.find((article) => article.id === id);
   return { article, isLoading: false, isError: false };
 };
 
@@ -18,7 +18,7 @@ export const useGetSimilarArticles = (id: Article["id"]) => {
   const { article } = useGetArticleById(id);
 
   const similarArticles = articles.filter(
-    (art) => art.id !== id && art.category === article.category
+    (art) => art.id !== id && art.category === article?.category
   );
 
   return { articles: similarArticles, isLoading: false, isError: false };
